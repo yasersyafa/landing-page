@@ -71,7 +71,7 @@ export default function Home() {
       {/* achievements section */}
       <section className='mt-10 md:pt-36 pb-10 md:pb-36 border-b pt-5' id='experience'>
         <h5 className='text-base md:text-xl text-center'>This is my</h5>
-        <h1 className='text-3xl md:text-6xl font-bold text-center mt-5'>Experience</h1>
+        <h1 className='text-3xl md:text-6xl font-bold text-center mt-5'>Skills</h1>
         <div className='flex flex-col md:flex-row justify-center items-center'>
           {/* front end */}
           <div className='mt-10 bg-[#FFC5C3] dark:bg-[#68242a] p-10 md:w-[45%] text-[#68242a] dark:text-[#FFC5C3] h-[300px] overflow-y-auto md:mr-5 rounded-lg hover:scale-105 transition duration-150 ease-in-out'>
