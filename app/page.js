@@ -204,7 +204,7 @@ export default function Home() {
       {/* what i offer */}
       <section className='mt-10 md:mt-36 pb-10 md:pb-20 md:border-b pt-5' id='offer'>
         <h5 className='text-base md:text-xl text-center'>Why you should</h5>
-        <h1 className='text-center font-bold text-3xl mt-5 md:text-6xl'>Hiring Me</h1>
+        <h1 className='text-center font-bold text-3xl mt-5 md:text-6xl'>Hire Me</h1>
         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1000px] mx-auto'>
           <div className='bg-[#0000005a] shadow-xl hover:scale-105 transition duration-150 ease-in-out rounded-xl p-5'>
             <RiTeamFill size={30} className='mx-auto' />
