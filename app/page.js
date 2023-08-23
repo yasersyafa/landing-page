@@ -1,7 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
+
 import Image from 'next/image'
-import { BiSun } from 'react-icons/bi'
+
 import { RiTeamFill } from 'react-icons/ri'
 import { FaBookReader } from 'react-icons/fa'
 
@@ -9,10 +10,14 @@ import { BsInstagram, BsSpotify, BsLinkedin, BsPersonWorkspace, BsCodeSquare } f
 
 
 import Link from 'next/link'
+import Modal from '@/components/Modal'
+import { Fragment, useState, useEffect } from 'react'
 
 export default function Home() {
-  
+  const [modal, setModal] = useState(false)
+
   return (
+    <Fragment>
     <div className='px-5 md:px-10 w-full'>
       <div className='pb-36 border-b md:pt-20' id='home'>
       <section className='w-full md:fixed top-0 left-0 flex justify-between md:px-10 md:shadow-xl md:bg-[#0000004b] z-10 py-5 items-center'>
@@ -30,6 +35,9 @@ export default function Home() {
         <motion.h5 initial={{opacity: 0, y:-5}} animate={{opacity: 1, y: 0}} transition={{duration: 0.3, delay: 0.1}} className='text-base md:text-xl'>Hello everyone! I am</motion.h5>
         <motion.h1 initial={{opacity: 0, y:-5}} animate={{opacity: 1, y: 0}} transition={{duration: 0.3, delay: 0.2}} className='text-3xl md:text-6xl font-bold md:before:content-["Muhammad"] md:after:content-["Al-Machdi"]'> Yaser Syafa </motion.h1>
         <motion.p initial={{opacity: 0, y:-5}} animate={{opacity: 1, y: 0}} transition={{duration: 0.3, delay: 0.3}} className='text-sm md:text-lg'>an enthusiastic person in technology</motion.p>
+        <motion.div initial={{opacity: 0, y:-5}} animate={{opacity: 1, y: 0}} transition={{duration: 0.3, delay: 0.4}} className='mx-auto'>
+          <h1 className='md:text-xl mx-auto mt-5 cursor-pointer font-bold rounded-xl text-[#68242a] p-3 bg-[#FFC5C3] w-fit hover:shadow-xl hover:scale-105 transition duration-150 ease-in-out' onClick={() => setModal(true)}>Hire Me</h1>
+        </motion.div>
         
       </section>
 
@@ -149,8 +157,13 @@ export default function Home() {
       </section>
 
 
+
+      
+
+
+
       {/* gallery section */}
-      <section className='mt-10 md:pt-36 pb-10 md:pb-36 border-b pt-5' id='gallery'>
+      <section className='mt-10 md:pt-36 pb-10 md:pb-36 md:border-b pt-5' id='gallery'>
         <h5 className='text-base md:text-xl text-center'>Welcome to</h5>
         <h1 className='text-3xl md:text-6xl font-bold text-center mt-5'>Gallery</h1>
         <p className='text-sm md:text-lg text-center mt-5'>my favorite photo, food, etc.</p>
@@ -199,35 +212,8 @@ export default function Home() {
             <Image className='rounded-xl hover:shadow-xl hover:scale-105 transition duration-200 ease-in-out' src='/img/g11.jpeg' width={300} height={300} alt='g1' />
           </div>
         </div>
-      </section>
 
-      {/* what i offer */}
-      <section className='mt-10 md:mt-36 pb-10 md:pb-20 md:border-b pt-5' id='offer'>
-        <h5 className='text-base md:text-xl text-center'>Why you should</h5>
-        <h1 className='text-center font-bold text-3xl mt-5 md:text-6xl'>Hire Me</h1>
-        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1000px] mx-auto'>
-          <div className='bg-[#0000005a] shadow-xl hover:scale-105 transition duration-150 ease-in-out rounded-xl p-5'>
-            <RiTeamFill size={30} className='mx-auto' />
-            <h1 className='text-center font-semibold mt-4 text-xl'>Teamwork</h1>
-          </div>
-
-          <div className='bg-[#0000005a] shadow-xl hover:scale-105 transition duration-150 ease-in-out rounded-xl p-5'>
-            <FaBookReader size={30} className='mx-auto' />
-            <h1 className='text-center font-semibold mt-4 text-xl'>Fast Learner</h1>
-          </div>
-
-          <div className='bg-[#0000005a] shadow-xl hover:scale-105 transition duration-150 ease-in-out rounded-xl p-5'>
-          <BsPersonWorkspace size={30} className='mx-auto' />
-            <h1 className='text-center font-semibold mt-4 text-xl'>Hardworking</h1>
-          </div>
-
-          <div className='bg-[#0000005a] shadow-xl hover:scale-105 transition duration-150 ease-in-out rounded-xl p-5'>
-          <BsCodeSquare size={30} className='mx-auto' />
-            <h1 className='text-center font-semibold mt-4 text-xl'>Interest in web development</h1>
-          </div>
-
-          
-        </div>
+        
       </section>
 
       {/* footer section */}
@@ -243,6 +229,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Modal isVisible={modal} onClose={() => setModal(false)} />
     </div>
+    </Fragment>
   )
 }
