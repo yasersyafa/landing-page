@@ -7,7 +7,7 @@ const Modal = ({isVisible, onClose}) => {
   }
   
   return (
-    <div className='fixed inset-0 w-full max-h-1/2 bg-black bg-opacity-25 max-h-1/2 backdrop-blur-lg z-40 transition duration-500 ease-in-out' onClick={() => onClose()}>       
+    <div className='fixed inset-0 w-full h-full max-h-1/2 bg-black bg-opacity-25 max-h-1/2 backdrop-blur-lg z-40 transition duration-500 ease-in-out' onClick={() => onClose()}>       
         <div className='bg-[white] overflow-y-auto rounded-lg p-5 max-h-[50%] md:max-h-[800px] gap-5 w-[85%] md:w-[50%] fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[#68242a]'>  
           <h5 className='text-xs mt-5 md:text-xl text-center'>Why you should</h5>
           <h1 className='text-center font-bold text-3xl md:text-6xl'>Hire Me</h1>
